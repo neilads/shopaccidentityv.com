@@ -14,5 +14,10 @@ use Illuminate\Database\Eloquent\Model;
 class Config extends Model
 {
     use HasFactory;
+    
     protected $fillable = ['key', 'value'];
+    
+    public $incrementing = false;
+    protected $keyType = 'string';
+    protected $primaryKey = 'key';
 }

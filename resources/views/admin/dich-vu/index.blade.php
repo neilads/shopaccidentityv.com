@@ -58,7 +58,7 @@
                             <div class="dash-widgetcontent">
                                 <h5>Nạp Echoes</h5>
                                 <h6>Dịch vụ nạp Echoes</h6>
-                                <a href="{{ route('admin.dich-vu.nap-identity') }}" class="btn btn-primary">Quản lý</a>
+                                <a href="{{ route('admin.dich-vu.nap-echoes') }}" class="btn btn-primary">Quản lý</a>
                             </div>
                         </div>
                     </div>

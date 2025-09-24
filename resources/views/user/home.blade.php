@@ -42,7 +42,7 @@
     
 
     <!-- Acc Identity V Mới Về -->
-    <section class="menu">
+    <section class="menu menu--accounts">
         <div class="container">
             <header class="menu__header menu__header--with-action">
                 <h2 class="menu__header__title">Acc Identity V Mới Về</h2>
@@ -73,7 +73,7 @@
             <header class="menu__header">
                 <h2 class="menu__header__title">Dịch Vụ Game</h2>
             </header>
-            <div class="category__list">
+            <div class="category__list category__list--products">
                 @foreach ($services->take(3) as $service)
                     @if ($service->active)
                         @if($service->slug == 'cay-thue')
@@ -83,7 +83,15 @@
                         @else
                             <a href="{{ route('service.show', ['slug' => $service->slug]) }}" class="category__item">
                         @endif
-                            <img src="{{ $service->thumbnail }}?v={{ $service->updated_at?->timestamp }}" alt="{{ $service->name }}" class="category__img" />
+                            <div class="category__media">
+                                @if(!empty($service->thumbnail))
+                                    <img src="{{ $service->thumbnail }}?v={{ $service->updated_at?->timestamp }}" alt="{{ $service->name }}" class="category__img" />
+                                @else
+                                    <div class="category__img category__img--placeholder">
+                                        <i class="fas fa-image"></i>
+                                    </div>
+                                @endif
+                            </div>
                             <h2 class="category__title">{{ $service->name }}</h2>
                         </a>
                     @endif
@@ -137,6 +145,46 @@
 
 @push('styles')
     <style>
+        .service-card__thumb {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f3f4f6;
+        }
+
+        .service-card__thumb img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-card__title {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .service-card__placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            color: #9ca3af;
+        }
+
+        .service-card__placeholder-icon {
+            font-size: 2rem;
+        }
+
         .category__stats {
             display: flex;
             flex-wrap: wrap;

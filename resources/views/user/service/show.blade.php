@@ -135,6 +135,12 @@
 
             <!-- Bảng Echoes -->
             <div class="service__echoes-section">
+                @php($echoesCover = config_get('echoes_cover_image'))
+                @if(!empty($echoesCover))
+                    <div class="mb-3">
+                        <img src="{{ $echoesCover }}" alt="Echoes Cover" style="max-width: 100%; height: auto; border-radius: 12px;">
+                    </div>
+                @endif
                 <h3 class="service__echoes-title">BẢNG GIÁ ECHOES</h3>
                 <div class="service__echoes-container">
                     <table class="service__echoes-table">

@@ -13,7 +13,7 @@
 
     <section class="menu">
         <div class="container">
-            <div class="category__list">
+            <div class="category__list category__list--products">
                 @if ($services->count() > 0)
                     @foreach ($services as $service)
                         @if ($service->active)
@@ -31,7 +31,15 @@
                             @else
                                 <a href="{{ route('service.show', ['slug' => $serviceSlug]) }}" class="category__item">
                             @endif
-                                <img src="{{ $service->thumbnail }}?v={{ $service->updated_at?->timestamp }}" alt="{{ $serviceName }}" class="category__img" />
+                                <div class="category__media">
+                                    @if(!empty($service->thumbnail))
+                                        <img src="{{ $service->thumbnail }}?v={{ $service->updated_at?->timestamp }}" alt="{{ $serviceName }}" class="category__img" />
+                                    @else
+                                        <div class="category__img category__img--placeholder">
+                                            <i class="fas fa-image"></i>
+                                        </div>
+                                    @endif
+                                </div>
                                 <h2 class="category__title">{{ strtoupper((string) $serviceName) }}</h2>
                             </a>
                         @endif
@@ -48,4 +56,20 @@
             </div>
         </div>
     </section>
+@push('styles')
+<style>
+.category__media { position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; }
+.category__media .category__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.category__img--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+    color: #9ca3af;
+}
+.category__img--placeholder i {
+    font-size: 2rem;
+}
+</style>
+@endpush
 @endsection

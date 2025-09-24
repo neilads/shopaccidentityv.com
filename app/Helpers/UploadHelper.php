@@ -59,7 +59,9 @@ class UploadHelper
             // Upload file
             $path = $file->storeAs('public/' . $directory, $filename);
 
-            return Storage::url($path);
+            $relativeUrl = Storage::url($path);
+
+            return url($relativeUrl);
         } catch (\Exception $e) {
             Log::error('Error uploading file: ' . $e->getMessage());
             throw $e;
@@ -95,8 +97,19 @@ class UploadHelper
     public static function deleteByUrl(string $url): bool
     {
         try {
-            $path = str_replace('/storage', 'public', $url);
-            return Storage::delete($path);
+            $parsed = parse_url($url);
+            $path = $parsed['path'] ?? $url;
+            $path = ltrim($path, '/');
+
+            if (str_starts_with($path, 'storage/')) {
+                $storagePath = 'public/' . substr($path, strlen('storage/'));
+            } elseif (str_starts_with($path, 'public/')) {
+                $storagePath = $path;
+            } else {
+                $storagePath = $path;
+            }
+
+            return Storage::delete($storagePath);
         } catch (\Exception $e) {
             Log::error('Error deleting file: ' . $e->getMessage());
             return false;

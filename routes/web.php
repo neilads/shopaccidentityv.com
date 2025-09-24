@@ -72,10 +72,10 @@ Route::get('/cho-thue', function() {
     return redirect('/');
 })->name('user.cho-thue');
 
-Route::get('/nap-identity', function() {
+Route::get('/nap-echoes', function() {
     $identityText = config_get('identity_text', '');
-    return view('user.nap-identity', compact('identityText'));
-})->name('user.nap-identity');
+    return view('user.nap-echoes', compact('identityText'));
+})->name('user.nap-echoes');
 
 Route::prefix('service')->name('service.')->group(function () {
     Route::get('/', [GameServiceController::class, 'showAll'])->name('show-all');

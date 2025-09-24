@@ -247,6 +247,16 @@
 
 /* Tăng độ ưu tiên để không bị ghi đè bởi các rule khác */
 .menu .category__list.category__list--products {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Giữ trang tài khoản 4 cột ở desktop dù đang nằm trong .menu */
+.page-account-index .category__list.category__list--products {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Giữ phần tài khoản ở trang chủ 4 cột */
+.menu--accounts .category__list.category__list--products {
     grid-template-columns: repeat(4, 1fr);
 }
 
@@ -322,7 +332,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
 }
 

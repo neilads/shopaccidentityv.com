@@ -2,6 +2,17 @@
 
 @section('title', 'Nạp Echoes')
 @section('content')
+    <!-- Hero Banner Section -->
+    @if(config_get('echoes_cover_image'))
+        <section class="hero-banner">
+            <div class="container">
+                <div class="hero-banner__wrapper">
+                    <img src="{{ config_get('echoes_cover_image') }}" alt="Nạp Echoes" class="hero-banner__img">
+                </div>
+            </div>
+        </section>
+    @endif
+
     <section class="service">
         <div class="container">
             <div class="section-header">
@@ -18,30 +29,26 @@
             </div>
         </div>
     </section>
-@endsection
-
-@extends('layouts.user.app')
-
-@section('content')
-<div class="page-wrapper">
-    <div class="content">
-        <div class="page-header">
-            <div class="page-title">
-                <h4>Nạp Echoes</h4>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <div class="identity-content">
-                    {!! $identityText !!}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <style>
+.hero-banner {
+    margin-bottom: 40px;
+}
+
+.hero-banner__wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-banner__img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
 .identity-content {
     line-height: 1.6;
     font-size: 16px;

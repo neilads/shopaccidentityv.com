@@ -44,6 +44,7 @@ class ConfigController extends Controller
             'site_share_image' => config_get('site_share_image'),
             'site_banner' => config_get('site_banner'),
             'site_favicon' => config_get('site_favicon'),
+            'echoes_cover_image' => config_get('echoes_cover_image'),
             'address' => config_get('address', ''),
             'phone' => config_get('phone', ''),
             'email' => config_get('email', ''),
@@ -72,6 +73,7 @@ class ConfigController extends Controller
             'site_share_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
             'site_banner' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
             'site_favicon' => 'nullable|image|mimes:ico,png|max:1024',
+            'echoes_cover_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ]);
 
         try {
@@ -98,6 +100,15 @@ class ConfigController extends Controller
                     $imageUrl = UploadHelper::upload($request->file('site_' . $key), self::UPLOAD_DIR);
                     config_set('site_' . $key, $imageUrl);
                 }
+            }
+
+            if ($request->hasFile('echoes_cover_image')) {
+                $oldImage = config_get('echoes_cover_image');
+                if ($oldImage) {
+                    UploadHelper::deleteByUrl($oldImage);
+                }
+                $imageUrl = UploadHelper::upload($request->file('echoes_cover_image'), self::UPLOAD_DIR);
+                config_set('echoes_cover_image', $imageUrl);
             }
 
             // Cập nhật các cài đặt khác

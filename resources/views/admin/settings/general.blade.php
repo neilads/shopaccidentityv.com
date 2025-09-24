@@ -278,6 +278,40 @@
                                 @endif
                             </div>
 
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label>Ảnh bìa bảng giá Echoes</label>
+                                    <div class="image-upload">
+                                        <input type="file" name="echoes_cover_image"
+                                            class="form-control @error('echoes_cover_image') is-invalid @enderror"
+                                            accept="image/jpeg,image/png,image/jpg,image/gif,image/webp"
+                                            onchange="previewImage(this, 'preview-echoes-cover')">
+                                        @error('echoes_cover_image')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                        <div class="image-uploads">
+                                            <img src="{{ asset('assets/img/icons/upload.svg') }}" alt="img">
+                                            <h4>Kéo thả hoặc click để tải ảnh lên</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @if (!empty($configs['echoes_cover_image']))
+                                    <div class="form-group mt-3">
+                                        <label>Ảnh hiện tại:</label>
+                                        <div>
+                                            <img id="preview-echoes-cover" src="{{ $configs['echoes_cover_image'] }}" alt="Echoes Cover"
+                                                class="img-fluid mt-2" style="max-height: 200px;">
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="form-group mt-3">
+                                        <img id="preview-echoes-cover" src="" alt="Echoes Cover Preview"
+                                            class="img-fluid mt-2" style="max-height: 200px; display: none;">
+                                    </div>
+                                @endif
+                            </div>
+
                             <div class="col-lg-12">
                                 <button type="submit" class="btn btn-submit me-2">Lưu thay đổi</button>
                                 <a href="{{ route('admin.index') }}" class="btn btn-cancel">Hủy bỏ</a>

@@ -37,14 +37,14 @@ class ServicesController extends Controller
         ]);
     }
 
-    public function napIdentity()
+    public function napEchoes()
     {
         $service = GameService::firstOrCreate(
-            ['slug' => 'nap-identity'],
+            ['slug' => 'nap-echoes'],
             ['name' => 'Nạp Echoes', 'thumbnail' => '', 'description' => '', 'type' => 'leveling', 'active' => 1]
         );
         $identityText = config_get('identity_text', '');
-        return view('admin.dich-vu.nap-identity', [
+        return view('admin.dich-vu.nap-echoes', [
             'identityText' => $identityText,
             'currentService' => $service
         ]);
@@ -92,7 +92,7 @@ class ServicesController extends Controller
     public function updateServiceThumbnail(Request $request)
     {
         $request->validate([
-            'scope' => 'required|in:cay-thue,cho-thue,nap-identity',
+            'scope' => 'required|in:cay-thue,cho-thue,nap-echoes',
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120'
         ]);
 
@@ -100,7 +100,7 @@ class ServicesController extends Controller
         $defaults = [
             'cay-thue' => ['name' => 'Cày Thuê'],
             'cho-thue' => ['name' => 'Cho Thuê'],
-            'nap-identity' => ['name' => 'Nạp Echoes']
+            'nap-echoes' => ['name' => 'Nạp Echoes']
         ];
         $service = GameService::firstOrCreate(
             ['slug' => $slug],

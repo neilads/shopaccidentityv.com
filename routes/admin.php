@@ -60,7 +60,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->name('admin.')->group(fun
         Route::get('/', [ServicesController::class, 'index'])->name('index');
         Route::get('/cay-thue', [ServicesController::class, 'cayThue'])->name('cay-thue');
         Route::get('/cho-thue', [ServicesController::class, 'choThue'])->name('cho-thue');
-        Route::get('/nap-identity', [ServicesController::class, 'napIdentity'])->name('nap-identity');
+        Route::get('/nap-echoes', [ServicesController::class, 'napEchoes'])->name('nap-echoes');
         Route::post('/update-avatar', [ServicesController::class, 'updateAvatar'])->name('update-avatar');
         Route::post('/update-identity-text', [ServicesController::class, 'updateIdentityText'])->name('update-identity-text');
         Route::post('/update-service-thumbnail', [ServicesController::class, 'updateServiceThumbnail'])->name('update-service-thumbnail');
