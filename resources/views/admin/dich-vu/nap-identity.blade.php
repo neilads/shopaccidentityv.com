@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Nạp Identity')
+@section('title', 'Nạp Echoes')
 
 @section('content')
 <div class="page-wrapper">
@@ -8,7 +8,7 @@
         <div class="page-header">
             <div class="add-item d-flex">
                 <div class="page-title">
-                    <h4>Nạp Identity</h4>
+                    <h4>Nạp Echoes</h4>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Nội dung trang Nạp Identity</h5>
+                <h5 class="card-title">Nội dung trang Nạp Echoes</h5>
                 
                 <form id="identityForm" enctype="multipart/form-data">
                     @csrf

@@ -56,8 +56,8 @@
                                 <span><i class="fas fa-credit-card"></i></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5>Nạp Identity</h5>
-                                <h6>Dịch vụ nạp Identity V</h6>
+                                <h5>Nạp Echoes</h5>
+                                <h6>Dịch vụ nạp Echoes</h6>
                                 <a href="{{ route('admin.dich-vu.nap-identity') }}" class="btn btn-primary">Quản lý</a>
                             </div>
                         </div>

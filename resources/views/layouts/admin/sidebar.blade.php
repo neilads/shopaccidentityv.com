@@ -22,7 +22,7 @@
                     <ul>
                         <li><a href="{{ route('admin.dich-vu.cay-thue') }}">Cày Thuê</a></li>
                         <li><a href="{{ route('admin.dich-vu.cho-thue') }}">Cho Thuê</a></li>
-                        <li><a href="{{ route('admin.dich-vu.nap-identity') }}">Nạp Identity V</a></li>
+                        <li><a href="{{ route('admin.dich-vu.nap-identity') }}">Nạp Echoes</a></li>
                     </ul>
                 </li>
 

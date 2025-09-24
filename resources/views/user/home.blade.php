@@ -44,23 +44,25 @@
     <!-- Acc Identity V Mới Về -->
     <section class="menu">
         <div class="container">
-            <header class="menu__header">
+            <header class="menu__header menu__header--with-action">
                 <h2 class="menu__header__title">Acc Identity V Mới Về</h2>
+                <a href="{{ url('/account/all') }}" class="menu__header__link">Xem tất cả</a>
             </header>
-            <div class="category__list" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
+            <div class="category__list category__list--products">
                 @foreach ($latestAccounts as $account)
                     <a href="{{ route('account.show', ['id' => $account->id]) }}" class="category__item">
-                        <img src="{{ $account->thumb }}" alt="acc" class="category__img" />
+                        <div class="category__media">
+                            <img src="{{ $account->thumb }}" alt="acc" class="category__img" />
+                        </div>
                         <h2 class="category__title">{{ number_format($account->price) }}đ</h2>
                         <div class="category__stats">
                             <span class="badge">{{ $account->planet == 'earth' ? 'Android' : 'iOS' }}</span>
                         </div>
-                        <p class="category__action">XEM CHI TIẾT</p>
+                        @if(!empty($account->note))
+                            <div class="category__desc">{{ $account->note }}</div>
+                        @endif
                     </a>
                 @endforeach
-                <a href="{{ url('/account/all') }}" class="category__item" style="display:flex;align-items:center;justify-content:center;">
-                    <h2 class="category__title">Xem tất cả</h2>
-                </a>
             </div>
         </div>
     </section>

@@ -1,11 +1,11 @@
 @extends('layouts.user.app')
 
-@section('title', 'Nạp Identity V')
+@section('title', 'Nạp Echoes')
 @section('content')
     <section class="service">
         <div class="container">
             <div class="section-header">
-                <h2 class="section__title">Nạp Identity V</h2>
+                <h2 class="section__title">Nạp Echoes</h2>
                 <p class="section__subtitle">Thông tin và bảng giá</p>
             </div>
 
@@ -27,7 +27,7 @@
     <div class="content">
         <div class="page-header">
             <div class="page-title">
-                <h4>Nạp Identity V</h4>
+                <h4>Nạp Echoes</h4>
             </div>
         </div>
 

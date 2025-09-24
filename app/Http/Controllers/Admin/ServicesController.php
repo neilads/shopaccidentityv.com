@@ -41,7 +41,7 @@ class ServicesController extends Controller
     {
         $service = GameService::firstOrCreate(
             ['slug' => 'nap-identity'],
-            ['name' => 'Nạp Identity', 'thumbnail' => '', 'description' => '', 'type' => 'leveling', 'active' => 1]
+            ['name' => 'Nạp Echoes', 'thumbnail' => '', 'description' => '', 'type' => 'leveling', 'active' => 1]
         );
         $identityText = config_get('identity_text', '');
         return view('admin.dich-vu.nap-identity', [
@@ -100,7 +100,7 @@ class ServicesController extends Controller
         $defaults = [
             'cay-thue' => ['name' => 'Cày Thuê'],
             'cho-thue' => ['name' => 'Cho Thuê'],
-            'nap-identity' => ['name' => 'Nạp Identity']
+            'nap-identity' => ['name' => 'Nạp Echoes']
         ];
         $service = GameService::firstOrCreate(
             ['slug' => $slug],
