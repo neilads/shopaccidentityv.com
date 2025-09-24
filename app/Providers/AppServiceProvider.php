@@ -25,8 +25,7 @@ class AppServiceProvider extends ServiceProvider
             return new \App\Helpers\ConfigHelper();
         });
 
-        //
-        Paginator::defaultView('vendor.pagination.default');
+        Paginator::useBootstrapFour();
 
     }
 }
