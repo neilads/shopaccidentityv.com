@@ -1,0 +1,11 @@
+deployment:
+  tasks:
+    - /opt/cpanel/composer/bin/composer install --no-interaction --no-dev --prefer-dist --optimize-autoloader
+    - php artisan down || true
+    - php artisan storage:link || true
+    - php artisan migrate --force
+    - php artisan config:cache
+    - php artisan route:cache
+    - php artisan view:cache
+    - chmod -R ug+rwx storage bootstrap/cache
+    - php artisan up
