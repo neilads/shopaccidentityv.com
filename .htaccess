@@ -2,3 +2,7 @@ RewriteEngine On
 RewriteBase /
 RewriteCond %{REQUEST_URI} !^public/
 RewriteRule ^(.*)$ public/$1 [L,QSA]
+
+php_value upload_max_filesize 20M
+php_value post_max_size 20M
+php_value memory_limit 256M
