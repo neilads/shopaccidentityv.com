@@ -9,7 +9,7 @@
 @extends('layouts.user.app')
 @section('title', $title)
 @section('content')
-    <x-hero-header title="DỊCH VỤ GAME" description="Danh sách các " />
+    <x-hero-header title="DỊCH VỤ GAME" description="" />
 
     <section class="menu">
         <div class="container">

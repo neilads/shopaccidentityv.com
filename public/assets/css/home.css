@@ -105,17 +105,17 @@
 .menu__header__link {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: #fff;
     text-decoration: none;
     padding: 8px 14px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid #fff;
     border-radius: 999px;
     transition: all .2s ease-in-out;
 }
 
 .menu__header__link:hover {
-    background: var(--primary-color);
-    color: #fff;
+    background: #fff;
+    color: #000;
 }
 
 @media screen and (max-width: 576px) {
@@ -136,7 +136,7 @@
     font-weight: 700;
     position: relative;
     padding-bottom: 12px;
-    color: var(--primary-color);
+    color: #fff;
     text-transform: uppercase;
 }
 
@@ -148,7 +148,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
+    background: #fff;
     border-radius: var(--border-radius-pill);
 }
 

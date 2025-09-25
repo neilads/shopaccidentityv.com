@@ -24,7 +24,9 @@
 .product-meta { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-bottom: 16px; }
 .product-meta .item { background: #f8fafc; border: 1px solid #eef2f7; border-radius: 10px; padding: 10px 12px; font-size: 14px; }
 .actions { display: flex; gap: 12px; margin: 18px 0 24px; }
-.btn-primary-buy { background: #111827; color: #fff; padding: 12px 18px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary-buy { background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: #fff; padding: 14px 22px; border-radius: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; border: none; box-shadow: 0 6px 20px rgba(14, 62, 218, 0.35); transition: transform .2s ease, box-shadow .2s ease, background .2s ease; font-weight: 700; font-size: 16px; text-transform: uppercase; }
+.btn-primary-buy:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(14, 62, 218, 0.45); }
+.btn-primary-buy i { font-size: 18px; }
 .btn-outline { border: 1px solid #e5e7eb; color: #111827; padding: 12px 18px; border-radius: 8px; text-decoration: none; }
 .tabs { margin-top: 24px; }
 .tab-nav { display: flex; gap: 16px; border-bottom: 1px solid #e5e7eb; margin-bottom: 14px; }
@@ -54,7 +56,7 @@
                 </div>
             </div>
             <div class="product-summary">
-                <h1>Tài khoản #{{ $account->id }}</h1>
+                <h1 style="color:#fff; text-shadow:0 2px 6px rgba(0,0,0,.35)">Tài khoản #{{ $account->id }}</h1>
                 <div class="product-price">{{ number_format($account->price) }} đ</div>
                 <div class="product-meta">
                     <div class="item">

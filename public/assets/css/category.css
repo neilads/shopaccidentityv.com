@@ -2,11 +2,7 @@
 .hero--small {
   padding: 25px 0;
   margin-bottom: 30px;
-  background: linear-gradient(
-    135deg,
-    var(--primary-dark),
-    var(--primary-color)
-  );
+  background: transparent;
   color: white;
   position: relative;
   overflow: hidden;
