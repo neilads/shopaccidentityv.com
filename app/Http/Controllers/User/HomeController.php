@@ -25,7 +25,7 @@ class HomeController extends Controller
         // Tài khoản mới về
         $latestAccounts = GameAccount::where('status', 'available')
             ->orderBy('created_at', 'desc')
-            ->limit(5)
+            ->limit(8)
             ->get();
 
         // Dịch vụ cày thuê - chỉ lấy 3 dịch vụ đầu tiên
