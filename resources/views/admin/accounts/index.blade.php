@@ -90,7 +90,7 @@
                                             {{ $osMap[$account->planet] ?? '-' }}
                                         </td>
                                         <td class="sticky-col">
-                                            <a class="me-3" href="{{ route('admin.accounts.show', $account->id) }}" title="Xem chi tiết">
+                                            <a class="me-3" href="{{ route('account.show', ['id' => $account->id]) }}" title="Xem chi tiết">
                                                 <img src="{{ asset('assets/img/icons/eye.svg') }}" alt="img">
                                             </a>
                                             <a class="me-3" href="{{ route('admin.accounts.edit', $account->id) }}" title="Chỉnh sửa">
