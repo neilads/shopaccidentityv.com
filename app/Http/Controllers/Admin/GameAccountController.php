@@ -58,7 +58,7 @@ class GameAccountController extends Controller
                 'price' => 'required|numeric|min:0',
                 'planet' => 'required|in:earth,namek',
                 'note' => 'nullable|string',
-                'thumb' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
+                'thumb' => 'required|image|mimes:jpeg,png,jpg,gif,webp',
                 'images' => 'nullable|array',
             ]);
 
@@ -151,7 +151,7 @@ class GameAccountController extends Controller
                 'price' => 'required|numeric|min:0',
                 'planet' => 'required|in:earth,namek',
                 'note' => 'nullable|string',
-                'thumb' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
+                'thumb' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
                 'images' => 'nullable|array',
             ]);
 

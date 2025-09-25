@@ -68,12 +68,12 @@ class ConfigController extends Controller
             'email' => 'nullable|email|max:255',
             'contact_admin_url' => 'nullable|url|max:255',
             'facebook' => 'nullable|url|max:255',
-            'site_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
-            'site_logo_footer' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
-            'site_share_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
-            'site_banner' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
-            'site_favicon' => 'nullable|image|mimes:ico,png|max:1024',
-            'echoes_cover_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+            'site_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'site_logo_footer' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'site_share_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'site_banner' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'site_favicon' => 'nullable|image|mimes:ico,png',
+            'echoes_cover_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
         ]);
 
         try {

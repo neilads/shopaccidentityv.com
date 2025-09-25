@@ -68,7 +68,7 @@ class ServicesController extends Controller
     public function updateAvatar(Request $request)
     {
         $request->validate([
-            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif'
         ]);
 
         if ($request->hasFile('avatar')) {
@@ -93,7 +93,7 @@ class ServicesController extends Controller
     {
         $request->validate([
             'scope' => 'required|in:cay-thue,cho-thue,nap-echoes',
-            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120'
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,webp'
         ]);
 
         $slug = $request->input('scope');
